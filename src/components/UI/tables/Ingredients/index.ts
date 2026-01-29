@@ -1,0 +1,1 @@
+export { IngredientsTable } from './IngredientsTable';
