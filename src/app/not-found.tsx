@@ -12,7 +12,7 @@ const NotFoundPage = () => {
       <h1 className="text-3xl font-bold tracking-tight">Page Not Found</h1>
 
       <div className="pt-6">
-        <Button as={Link} color="primary" variant="shadow" href={ROUTES.HOME}>
+        <Button as={Link} color="primary" variant="shadow" href={ROUTES.RECIPES}>
           Go Home
         </Button>
       </div>
