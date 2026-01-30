@@ -5,7 +5,11 @@ import { ROUTES } from '@/constants/routes';
 
 export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
-  const token = await getToken({ req: request, secret: process.env.AUTH_SECRET });
+  const token = await getToken({
+    req: request,
+    secret: process.env.AUTH_SECRET,
+    secureCookie: process.env.NODE_ENV === 'production',
+  });
 
   const protectedPaths = [ROUTES.INGREDIENTS, ROUTES.RECIPES_NEW, ROUTES.RECIPES_EDIT(':path*')];
 
