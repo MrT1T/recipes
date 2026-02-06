@@ -44,12 +44,7 @@ export const Header = () => {
 
   const getNavbarItems = () =>
     navbarItems
-      .filter((item) => {
-        if (item.authOnly) {
-          return isAuth;
-        }
-        return true;
-      })
+      .filter((item) => !item.authOnly || isAuth)
       .map((item) => {
         const isActive = pathname === item.href;
         return (
